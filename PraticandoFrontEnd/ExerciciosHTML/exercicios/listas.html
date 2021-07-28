@@ -1,0 +1,77 @@
+<h1> Listas </h1>
+
+<!--Listas Ordenadas-->
+<h2>Aprovados</h2>
+<ol>
+    <li>Bia</li>
+    <li>Pedro</li>
+    <li>Maria</li>
+    <li>João</li>
+</ol>
+
+<!--Lista não ordenadas-->
+<h2>Lista de produtos</h2>
+    <ul>
+            <li>Arroz</li>
+            <li>Feijão</li>
+            <li>Açucar</li>
+    </ul>
+<!--Lista de definições-->
+<h2>Principais termos de serviçõs</h2>
+<dl>
+    <dt>BasS</dt>
+    <dd>Backend como Serviço</dd>
+    <dt>IaaS</dt>
+    <dd>INfraestrutra como serviço</dd>
+</dl>
+
+<!--Lista alinhadas-->
+<h2>Lista alinha</h2>
+<ul class='tree'>
+    <li>
+                    <span wm-folder>Backend</span>
+        <ul>
+            <li>
+                    <span wm-folder>app</span>
+                <ul>
+                        <li>Produto.js</li>
+                        <li>usuario.js</li>
+                        <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                    <span wm-folder> config</span>
+                <ul>
+                    <li>
+                            <li>banco.js</li>
+                            <li>rotas.js</li>
+                            <li>servidor.js</li>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+                    <span wm-folder>Frontend</span>
+        <ul>
+            <li>
+                    <span wm-folder>app</span>
+                <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+<script>
+    document.querySelectorAll('[wm-folder]').forEach(folder => {
+           folder.onClick = function(e){
+               const ul = folder.nextElementSibling
+               const dis = u.style.display
+               ul.style.display = dis === 'none' ? 'block' : 'none'
+           }
+    });
+</script>
