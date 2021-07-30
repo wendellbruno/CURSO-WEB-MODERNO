@@ -1,0 +1,48 @@
+Inserir
+db.nomeTabela.insert ou db.nomeTabela.sabe(chave: "valor")
+
+Buscar total
+db.nometabela.find() 
+
+busca a quantidade de "arquivos"
+db.nomeTabela.count()
+
+
+Busca melhorada
+db.nometabela.find().pretty()
+
+db.help
+
+Limpar console : cls
+
+busca por filtro : 
+db.nomeTabela.findOne({sigla: "rj"})
+
+busca por OU
+db.nomeTabela.find({$or: [{sigla: "RJ"},{sigla: "AC"}]}).pretty()
+
+busca por E
+db.nomeTabela.find({$and: [{sigla: "RJ"},{sigla: "AC"}]}).pretty()
+
+busca por existir
+db.nomeTabela.find({populacao : {$exists: true}}).pretty()
+
+buscar por limitação de escolhas
+db.nomeTabela.find({sigla: "SP"},{nome: 1, sigla:1}) o 1 representa que está presente no retorno da busca
+
+ db.nomeTabela.find({sigla: "SP"},{"cidades.nome" : 1,_id: 0}) me retorna as cidades de sp sem mostrar o id
+
+
+ UpDate quando nao existe a populacao
+ db.estados.update({sigla: "SP"},{$set: {populacao: 45000000}})
+quando ja se existe se usa o push
+
+
+Remove simples buscando pela sigla
+db.estados.remove({sigla: "AC"})
+
+Remove todo estado que tem população
+db.estatodos.remove({populacao: {$exists: true}}, aqui digo o limite de estados)
+
+remove estado com populaçao menor que...
+db.estados.remove({populacao: {$lt: 200000000}})
